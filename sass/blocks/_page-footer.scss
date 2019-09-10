@@ -1,0 +1,177 @@
+@import "../variables";
+@import "../global/mixins";
+
+.page-footer {
+  display: block;
+
+  background-color: $white;
+}
+
+.page-footer--hidden {
+  display: none;
+}
+
+.page-footer__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  width: 100%;
+  min-height: 285px;
+
+  margin: auto;
+  padding: 15px 20px;
+  box-sizing: border-box;
+}
+
+.page-footer__link {
+  display: block;
+}
+
+.page-footer__link-img {
+  display: block;
+}
+
+.page-footer__logo {
+  padding-top: 5px;
+}
+
+.page-footer__logo-tablet {
+  display: block;
+}
+
+.page-footer__logo-desktop {
+  display: none;
+}
+
+@media #{$desktop}{
+  .page-footer__logo-desktop {
+    display: block;
+  }
+
+  .page-footer__logo-tablet {
+    display: none;
+  }
+}
+
+.page-footer__logo-tablet:hover .page-footer__logo-letters-tablet {
+  fill: $cerise;
+  transition-duration: .3s
+}
+
+.page-footer__logo-desktop, .page-footer__logo-tablet {
+  width: 147px;
+  height: 40px
+}
+
+.page-footer__logo-letters-desktop, .page-footer__logo-letters-tablet {
+  fill: $midnight
+}
+
+.page-footer__logo-glasses-desktop, .page-footer__logo-star, .page-footer__logo-glasses-tablet {
+  fill: $cerise
+}
+
+.page-footer__logo-stars {
+  fill: $midnight
+}
+
+.page-footer__logo-tablet:active .page-footer__logo-letters-tablet {
+  fill: $midnight;
+  opacity: .3;
+  transition-duration: 0s;
+}
+
+.page-footer__logo-tablet:active .page-footer__logo-glasses-tablet {
+  opacity: .3;
+  transition-duration: 0s
+}
+
+.page-footer__logo-desktop:hover .page-footer__logo-letters-desktop {
+  fill: $cerise;
+  transition-duration: .3s
+}
+
+.page-footer__logo-desktop:hover .page-footer__logo-star, .page-footer__logo-desktop:hover .page-footer__logo-stars {
+  fill: $midnight;
+  transition-duration: .3s
+}
+
+.page-footer__logo-desktop:active .page-footer__logo-letters-desktop, .page-footer__logo-desktop:active .page-footer__logo-stars {
+  fill: $midnight;
+  opacity: .3;
+  transition-duration: 0s
+}
+
+.page-footer__logo-desktop:active .page-footer__logo-glasses-desktop {
+  opacity: .3;
+  transition-duration: 0s
+}
+
+.page-footer__logo-desktop:active .page-footer__logo-star {
+  fill: $cerise;
+  opacity: .3;
+  transition-duration: 0s
+}
+
+.page-footer__social-container {
+  display: flex;
+}
+
+.page-footer__social-separator {
+  flex-grow: 1;
+}
+
+@media #{$tablet} {
+  .page-footer__social-container {
+    flex-grow: 1;
+  }
+
+  .page-footer {
+    display: block;
+
+    min-height: 125px;
+  }
+
+  .page-footer__logo {
+    padding-top: 0;
+  }
+
+  .page-footer__container {
+    flex-direction: row;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    min-height: 125px;
+  }
+
+  .page-footer__link {
+    padding-bottom: 10px;
+  }
+}
+
+@media #{$desktop} {
+  .page-footer__container {
+    width: 940px;
+    min-height: 190px;
+
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .page-footer__container--forms-page {
+    min-height: 100px;
+  }
+
+  .page-footer__container--photos-page {
+    min-height: 225px;
+    padding-top: 30px;
+  }
+
+  .page-footer__social-container {
+    margin-left: 15px;
+    margin-right: 0;
+  }
+}

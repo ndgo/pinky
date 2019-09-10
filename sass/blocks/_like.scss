@@ -1,0 +1,30 @@
+@import "../variables";
+@import "../global/mixins";
+
+.like {
+  display: flex;
+  align-items: center;
+
+}
+
+.like__icon {
+  margin-right: 20px;
+}
+
+.like__text {
+  @include embed-font($font-family, 12px, 12px, $cerise, $lighter);
+
+  text-transform: uppercase;
+}
+
+.like__count {
+  @include embed-font($font-family, 12px, 12px, $cerise, $lighter);
+}
+
+@media #{$tablet} {
+  .like__icon {
+    margin-right: 0;
+    order: 15;
+    margin-left: auto;
+  }
+}

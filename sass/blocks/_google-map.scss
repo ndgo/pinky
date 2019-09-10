@@ -1,0 +1,45 @@
+@import "../variables";
+@import "../global/mixins";
+
+.google-map {
+  position: relative;
+}
+
+.google-map__img {
+  position: absolute;
+  top: -1px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+@media #{$tablet} {
+  .google-map__img {
+    height: 70px;
+  }
+}
+
+@media #{$desktop} {
+  .google-map__img {
+    height: 100px;
+  }
+}
+
+.google-map__map {
+  height: 200px;
+  background: $whisper url(../img/bg-map-mobile@1x.png) center;
+  background-size: cover;
+}
+
+@media #{$tablet} {
+  .google-map__map {
+    height: 375px;
+  }
+}
+
+@media #{$desktop} {
+  .google-map__map {
+    min-height: 500px;
+  }
+}

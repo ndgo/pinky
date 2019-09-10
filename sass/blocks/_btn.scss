@@ -1,0 +1,169 @@
+@import "../variables";
+@import "../global/mixins";
+
+.btn {
+  @include embed-font($font-family, 18px, 18px, $white, $bold);
+
+  display: block;
+
+  width: 100%;
+
+  padding: 15px 0;
+
+  border: 3px solid $white;
+  border-radius: 50px;
+
+  text-align: center;
+  text-decoration: none;
+  text-transform: none;
+
+  box-sizing: border-box;
+
+  outline: 0;
+}
+
+.btn--promo:hover {
+  color: $cerise;
+  background-color: $white;
+  transition-duration: .3s;
+}
+
+.btn--promo:active {
+  color: rgba($cerise, .3);
+  transition-duration: .3s;
+}
+
+.btn--submit,
+.btn--modal-window {
+
+  border: 0 solid;
+  border-radius: 3px;
+
+  padding-top: 22px;
+  padding-bottom: 22px;
+
+  background-color: $sea-green;
+
+  text-transform: uppercase;
+}
+
+.btn--submit:hover,
+.btn--modal-window:hover {
+  background-color: $eucalyptus;
+  transition-duration: .3s;
+  transition-property: background-color;
+}
+
+.btn--submit:active,
+.btn--modal-window:active {
+  color: rgba($white, .7);
+  transition-duration: .3s;
+  transition-property: color;
+}
+
+.btn--submit:disabled,
+.btn--modal-window:disabled {
+  background-color: $whisper;
+  color: $white;
+}
+
+.btn--editor-submit {
+  margin-bottom: 10px;
+
+  color: $cerise;
+
+  border-color: $cerise;
+
+  background-color: $transparent;
+}
+
+.btn--editor-submit:hover {
+  background-color: $cerise;
+  border-color: $cerise;
+  color: $white;
+  transition-duration: .3s;
+}
+
+.btn--editor-submit:active {
+  color: rgba($white, .3);
+  transition-duration: .3s;
+}
+
+.btn--editor-reset {
+  color: rgba($heather, .3);
+
+  border-color: rgba($heather, .3);
+
+  background-color: $transparent;
+
+}
+
+.btn--editor-reset:hover {
+  color: $heather;
+
+  border-color: $heather;
+
+  transition-duration: .3s;
+}
+
+.btn--editor-reset:active {
+  background-color: $heather;
+
+  color: rgba($white, .3);
+
+  transition-duration: .3s;
+}
+
+@media #{$tablet} {
+  .btn--submit {
+    width: auto;
+    min-width: calc(50% - 10px);
+  }
+
+  .btn--editor-submit {
+    margin-bottom: 24px;
+  }
+
+  .btn--modal-window {
+    display: inline-block;
+    vertical-align: middle;
+
+    width: 300px;
+  }
+}
+
+@media #{$desktop} {
+
+  .btn--promo {
+    font-size: 21px;
+    line-height: 18px;
+  }
+
+  .btn--editor-submit {
+    width: auto;
+
+    min-width: 180px;
+
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: auto;
+  }
+
+  .btn--editor-reset {
+    width: auto;
+
+    min-width: 180px;
+
+    margin-left: auto;
+    margin-right: 0;
+  }
+
+  .btn--submit {
+    width: 32%;
+    min-width: inherit;
+  }
+
+  .btn--modal-success {
+    width: 460px;
+  }
+}

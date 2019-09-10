@@ -1,0 +1,6 @@
+@import "mixins";
+@import "../variables";
+
+@include font-face($embedding-font, $font-weight-to-path, $lighter, null, woff woff2);
+@include font-face($embedding-font, $font-weight-to-path, $normal, null, woff woff2);
+@include font-face($embedding-font, $font-weight-to-path, $bold, null, woff woff2);

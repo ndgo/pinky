@@ -1,0 +1,7 @@
+@import "../variables";
+@import "../global/mixins";
+
+.page-header {
+  position: relative;
+  z-index: 1;
+}

@@ -1,0 +1,36 @@
+$font-family: "Open Sans", Helvetica, Arial, sans-serif;
+$embedding-font: "Open Sans";
+
+$phone: "(min-width: 320px)";
+$phone-max-width: "(max-width: 659px)";
+$tablet: "(min-width: 660px)";
+$tablet-max-width: "(max-width: 959px)";
+$desktop: "(min-width: 960px)";
+$min-dpi: "(min-resolution: 144dpi)";
+$min-dppx: "(min-resolution: 1.5dppx)";
+
+$lighter: 300;
+$normal: 400;
+$bold: 700;
+
+$font-weight-to-path: (
+  $lighter: "../fonts/opensanslight",
+  $normal: "../fonts/opensans",
+  $bold: "../fonts/opensansbold"
+);
+
+// http://www.htmlcsscolor.com/hex/e5e5e5
+$midnight: #283645;
+$white-smoke: #F2F2F2;
+$white: #FFF;
+$cerise: #D22856;
+$sea-green: #2AAB6D;
+$eucalyptus: #1C9B5E;
+$black: #000;
+$transparent: transparent;
+$heather: #b5b9be;
+$spindle: #BEC2C7;
+$whisper: #e5e5e5;
+$pattens-blue: #E9EBEC;
+$blue-charcoal: #1d2631;
+$light-stale-gray: #7E868F;

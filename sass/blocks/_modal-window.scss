@@ -1,0 +1,125 @@
+@import "../variables";
+@import "../global/mixins";
+
+.modal-window {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  height: auto;
+  width: 320px;
+
+  padding: 43px 20px 50px 20px;
+
+  text-align: center;
+
+  background-color: $white;
+  box-shadow: 0 7px 15px 0 rgba($black, .15);
+
+  box-sizing: border-box;
+
+  transform: translate(-50%, -50%);
+  z-index: 15;
+}
+
+.modal-window--success {
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.modal-window__text-container--success {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.modal-window__header {
+  @include embed-font($font-family, 18px, 24px, $black, $bold);
+
+  margin-top: 0;
+  margin-bottom: 24px;
+}
+
+.modal-window__text {
+  @include embed-font($font-family, 14px, 24px, $midnight, $normal);
+
+  margin-bottom: 37px;
+}
+
+.modal-window__inner--success {
+  padding: 48px 20px 52px;
+
+  background-color: $white-smoke;
+}
+
+.modal-window--hidden {
+  display: none;
+}
+
+.modal-window__text--success {
+  margin-bottom: 32px;
+}
+
+@media #{$tablet} {
+  .modal-window {
+    width: 460px;
+    padding: 40px 80px 50px;
+  }
+
+  .modal-window__header {
+    margin-bottom: 20px;
+
+    font-size: 30px;
+    line-height: 40px;
+  }
+
+  .modal-window__header--success {
+    margin-bottom:24px;
+  }
+
+  .modal-window__text {
+    font-size: 18px;
+  }
+
+  .modal-window--success {
+    padding: 33px 0 0;
+  }
+
+  .modal-window__text-container--success {
+    padding-left: 75px;
+    padding-right: 75px;
+  }
+
+  .modal-window__inner--success {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+
+}
+
+@media #{$desktop} {
+  .modal-window__header {
+    margin-bottom: 20px;
+  }
+
+  .modal-window--success {
+    width: 780px;
+  }
+
+  .modal-window__inner--success {
+    padding-top: 56px;
+    padding-left: 160px;
+    padding-right: 160px;
+  }
+
+  .modal-window__text-container--success {
+    width: 400px;
+
+    padding-left: 0;
+    padding-right: 0;
+    margin: 0 auto;
+  }
+
+  .modal-window--success {
+    padding-top: 40px;
+  }
+}

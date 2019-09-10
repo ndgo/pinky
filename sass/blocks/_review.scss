@@ -1,0 +1,260 @@
+@import "../variables";
+@import "../global/mixins";
+
+.review {
+  margin: 0 auto;
+
+  padding: 0 20px 69px 20px;
+
+  background-color: $white;
+
+  box-sizing: border-box;
+}
+
+.review::after {
+  content: "";
+  background-image: url("../img/bg-triangle-white.svg");
+}
+
+.review__input {
+  display: none;
+}
+
+.review__mask {
+  overflow: hidden;
+  padding-bottom: 30px;
+}
+
+.review__slides {
+  display: flex;
+  width: 300%;
+  transition-property: margin-left;
+  transition-duration: .6s;
+}
+
+.review__controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.review__control {
+  display: inline-block;
+  vertical-align: middle;
+
+  width: 6px;
+  height: 6px;
+
+  margin-right: 15px;
+
+  background-color: $spindle;
+  border: 3px solid $white;
+  border-radius: 50%;
+  transition-duration: .3s;
+
+  cursor: pointer;
+}
+
+.review__control:last-child {
+  margin-right: 0;
+}
+
+.review__control:hover {
+  transition-duration: .3s;
+  transition-property: background-color;
+  background-color: $light-stale-gray;
+}
+
+.review__control:active {
+  transition-duration: .3s;
+  transition-property: background-color;
+  background-color: $pattens-blue;
+}
+
+#review__slide-1:checked ~ .review__controls [for="review__slide-1"],
+#review__slide-2:checked ~ .review__controls [for="review__slide-2"],
+#review__slide-3:checked ~ .review__controls [for="review__slide-3"] {
+  border: 3px solid $midnight;
+  background-color: $white-smoke;
+}
+
+#review__slide-1:checked ~ .review__mask .review__slides {
+  margin-left: 0;
+}
+
+#review__slide-2:checked ~ .review__mask .review__slides {
+  margin-left: -100%;
+}
+
+#review__slide-3:checked ~ .review__mask .review__slides {
+  margin-left: -200%;
+}
+
+.review__item {
+  width: 100%;
+
+  margin: 0;
+}
+
+.review__author {
+  @include embed-font($font-family, 18px, 30px, $black, $bold, normal);
+
+  display: block;
+
+  padding-bottom: 15px;
+
+  text-align: center;
+}
+
+.review__author-info {
+  @include embed-font($font-family, 14px, 30px, $midnight, $normal);
+
+  display: none;
+
+  text-align: center;
+}
+
+.review__text {
+  @include embed-font($font-family, 14px, 30px, $midnight, $normal);
+
+  margin: 0;
+
+  text-align: center;
+}
+
+@media #{$tablet} {
+  .review {
+    padding: 0 20px 25px 20px;
+  }
+
+  .review__author-info {
+    display: block;
+  }
+
+  .review__item {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .review__text {
+    font-size: 18px;
+  }
+
+  .review__author {
+    font-size: 20px;
+
+    padding-bottom: 5px;
+  }
+
+  .review__text {
+    order: -1;
+
+    padding-bottom: 35px;
+  }
+}
+
+@media #{$desktop} {
+  .review {
+    position: relative;
+
+    width: 940px;
+
+    margin-bottom: 5px;
+    padding: 0;
+  }
+
+  .review__author {
+    padding-bottom: 0;
+    font-size: 24px;
+  }
+
+  .review__author-info {
+    font-size: 18px;
+    line-height: 30px;
+  }
+
+  .review__slide {
+    padding: 145px 90px 0 90px;
+
+    background-image: url(../img/icon-quotes.svg);
+    background-repeat: no-repeat;
+    background-position: center 35px;
+    background-size: 79px;
+  }
+
+  .review__controls {
+    justify-content: space-between;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+  }
+
+  .review__control {
+    display: none;
+
+    width: 25px;
+    height: 25px;
+    margin-right: 0;
+    margin-top: 20px;
+    background-color: $transparent;
+    border: 2px solid $spindle;
+    border-radius: 0;
+    transform: rotate(45deg);
+
+    cursor: pointer;
+  }
+
+  .review__control:hover {
+    background-color: $transparent;
+    border-color: $light-stale-gray;
+    transition-duration: .3s;
+  }
+
+  .review__control:active {
+    background-color: $transparent;
+    border-color: $pattens-blue;
+    transition-duration: .3s;
+  }
+
+  #review__slide-1:checked ~ .review__controls [for="review__slide-2"] {
+    display: block;
+
+    margin-left: auto;
+
+    margin-right: 5px;
+
+    border-bottom-color: $transparent;
+    border-left-color: $transparent;
+  }
+
+  #review__slide-2:checked ~ .review__controls [for="review__slide-1"] {
+    display: block;
+
+    margin-left: 5px;
+
+    border-top-color: $transparent;
+    border-right-color: $transparent;
+  }
+
+  #review__slide-2:checked ~ .review__controls [for="review__slide-3"] {
+    display: block;
+
+    margin-left: auto;
+
+    margin-right: 5px;
+
+    border-bottom-color: $transparent;
+    border-left-color: $transparent;
+  }
+
+  #review__slide-3:checked ~ .review__controls [for="review__slide-2"] {
+    display: block;
+
+    margin-left: 5px;
+
+    border-top-color: $transparent;
+    border-right-color: $transparent;
+  }
+}
